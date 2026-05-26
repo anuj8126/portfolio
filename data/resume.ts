@@ -1,10 +1,11 @@
 export const profile = {
   name: 'Anuj Kumar Srivastav',
-  title: 'Senior Product Engineer',
+  title: 'Senior Full Stack Product Engineer',
   tagline:
-    'Building scalable, performant SaaS & fintech products with React, TypeScript, and Next.js.',
+    'Frontend-heavy full stack engineer building scalable SaaS, fintech, healthcare, PropTech & e-commerce products with React, TypeScript, and Next.js.',
   summary:
-    "Senior Product Engineer with 8+ years building scalable SaaS and fintech applications. I specialize in scalable frontend architecture, real-time systems, performance optimization, and AI-assisted engineering workflows. Strong track record of reducing bundle size, optimizing API-heavy applications, and shipping intuitive product experiences across fast-moving Agile teams.",
+    "Frontend-heavy full stack product engineer with 8+ years shipping scalable products across SaaS, fintech, healthcare, PropTech, and e-commerce. I specialize in scalable frontend architecture, real-time systems, API & microservice integration, performance optimization, and AI-assisted engineering workflows. Strong track record of reducing bundle size, optimizing API-heavy applications, and shipping intuitive product experiences across fast-moving Agile teams.",
+  industries: ['SaaS', 'Fintech', 'Healthcare', 'PropTech', 'E-commerce'],
   location: 'Bengaluru, India',
   availability: 'Open to Remote — EU / US / UK time zones',
   email: 'mailanujsri@gmail.com',
@@ -200,42 +201,57 @@ export const skills: SkillGroup[] = [
 ];
 
 export type Highlight = {
-  metric: string;
+  value: number;
+  suffix?: string;
+  prefix?: string;
+  decimals?: number;
   label: string;
   detail: string;
 };
 
 export const highlights: Highlight[] = [
   {
-    metric: '62.5%',
+    value: 62.5,
+    suffix: '%',
+    decimals: 1,
     label: 'Bundle size reduction',
     detail: 'Cut SaaS app bundle from 16 MB to 6 MB at Unosecure.',
   },
   {
-    metric: '40%',
+    value: 40,
+    suffix: '%',
     label: 'Fewer API calls',
     detail: 'Real-time trading workflows via WebSockets + smart polling.',
   },
   {
-    metric: '50%',
+    value: 50,
+    suffix: '%',
     label: 'Faster KYC',
     detail: 'Facial auth on MediaPipe / WebRTC for Simplici.io.',
   },
   {
-    metric: '7',
+    value: 7,
     label: 'Engineers mentored',
     detail: 'Led frontend team, +20% delivery velocity.',
   },
   {
-    metric: '8+',
+    value: 8,
+    suffix: '+',
     label: 'Years of experience',
     detail: 'Across SaaS, fintech, healthcare, and PropTech.',
   },
   {
-    metric: '5+',
+    value: 5,
+    suffix: '+',
     label: 'Production platforms',
     detail: 'Shipped to enterprise & high-traffic consumer audiences.',
   },
+];
+
+export const philosophy = [
+  'Pragmatic, performance-first frontend — every kilobyte and every millisecond gets justified.',
+  'API contracts and microservice boundaries are part of the frontend job. I design for both sides.',
+  'AI-assisted workflows for speed; senior taste and code review rigor for quality.',
 ];
 
 export type Project = {
