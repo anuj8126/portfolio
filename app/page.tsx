@@ -19,7 +19,7 @@ const jsonLd = {
     addressLocality: 'Bengaluru',
     addressCountry: 'IN',
   },
-  url: 'https://anujsrivastav.dev',
+  url: 'https://anujsrivastav.vercel.app',
   sameAs: [profile.links.linkedin, profile.links.github],
   knowsAbout: [
     'React',
