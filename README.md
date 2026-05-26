@@ -1,5 +1,7 @@
 # Anuj Kumar Srivastav — Portfolio
 
+**Live:** [anujsrivastav.vercel.app](https://anujsrivastav.vercel.app)
+
 Personal portfolio for **Anuj Kumar Srivastav**, Senior Product Engineer (React · TypeScript · Next.js).
 Targeting senior frontend / product engineer / tech lead roles across **India, US, and UK** (remote).
 
@@ -58,7 +60,7 @@ npm run build && npm run start
 1. Push this repo to GitHub.
 2. Import the repo on [vercel.com/new](https://vercel.com/new).
 3. Framework preset: **Next.js**. No env vars required.
-4. Custom domain: add your domain (e.g. `anujsrivastav.dev`) under Project → Settings → Domains.
+4. Custom domain: add your domain under Project → Domains. The current production URL is [anujsrivastav.vercel.app](https://anujsrivastav.vercel.app).
 
 **Static / any host (Netlify, Cloudflare Pages, S3):**
 

@@ -18,7 +18,7 @@ const jetbrains = JetBrains_Mono({
   display: 'swap',
 });
 
-const siteUrl = 'https://anujsrivastav.dev';
+const siteUrl = 'https://anujsrivastav.vercel.app';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
