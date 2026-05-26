@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
+import { ScrollProgress } from '@/components/scroll-progress';
 import { profile } from '@/data/resume';
 import './globals.css';
 
@@ -28,18 +29,29 @@ export const metadata: Metadata = {
   },
   description: profile.summary,
   keywords: [
+    'Senior Full Stack Engineer',
+    'Senior Full Stack Product Engineer',
+    'Frontend-Heavy Full Stack Engineer',
     'Senior Frontend Engineer',
     'Senior Product Engineer',
     'React Developer',
     'TypeScript Developer',
     'Next.js Developer',
+    'Node.js Developer',
+    'MERN Stack Developer',
+    'MERN Developer',
+    'React Node Engineer',
+    'Remote Full Stack Engineer',
     'Remote Frontend Engineer',
     'Frontend Tech Lead',
-    'India Frontend Engineer',
+    'India Full Stack Engineer',
     'US Remote Engineer',
     'UK Remote Engineer',
     'SaaS Engineer',
     'Fintech Engineer',
+    'Healthcare Engineer',
+    'PropTech Engineer',
+    'E-commerce Engineer',
     'Performance Engineering',
     'Web Components',
     'WebRTC',
@@ -96,6 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
             Skip to content
           </a>
+          <ScrollProgress />
           <Navbar />
           <main id="main">{children}</main>
           <Footer />

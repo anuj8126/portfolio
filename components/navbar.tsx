@@ -5,18 +5,20 @@ import Link from 'next/link';
 import { Github, Linkedin, Menu, X } from 'lucide-react';
 import { profile } from '@/data/resume';
 import { ThemeToggle } from './theme-toggle';
+import { useActiveSection } from '@/lib/use-active-section';
 
 const navItems = [
-  { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'contact', label: 'Contact' },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const active = useActiveSection(navItems.map((n) => n.id));
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -29,7 +31,7 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-40 w-full border-b transition-colors ${
         scrolled
-          ? 'border-border/80 bg-bg/80 backdrop-blur-md'
+          ? 'border-border/80 bg-bg/75 backdrop-blur-md'
           : 'border-transparent bg-transparent'
       }`}
     >
@@ -38,22 +40,33 @@ export function Navbar() {
           href="#top"
           className="group flex items-center gap-2 font-mono text-sm font-medium tracking-tight"
         >
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-accent text-[0.7rem] font-semibold text-accent-fg">
+          <span className="grid h-7 w-7 place-items-center rounded-md bg-fg text-[0.7rem] font-semibold text-bg transition group-hover:bg-accent group-hover:text-accent-fg">
             AS
           </span>
           <span className="hidden sm:inline">{profile.name.split(' ')[0]}.dev</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="rounded-md px-3 py-2 text-sm text-fg-muted transition hover:bg-bg-subtle hover:text-fg"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isActive = active === item.id;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={`relative rounded-md px-3 py-2 text-sm transition ${
+                  isActive ? 'text-fg' : 'text-fg-muted hover:bg-bg-subtle hover:text-fg'
+                }`}
+              >
+                {item.label}
+                {isActive && (
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-3 bottom-1 h-px bg-gradient-to-r from-transparent via-accent to-transparent"
+                  />
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -90,16 +103,21 @@ export function Navbar() {
       {open && (
         <div className="border-t border-border bg-bg md:hidden">
           <nav className="container flex flex-col py-2">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-sm text-fg-muted hover:bg-bg-subtle hover:text-fg"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = active === item.id;
+              return (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={() => setOpen(false)}
+                  className={`rounded-md px-3 py-3 text-sm transition ${
+                    isActive ? 'bg-bg-subtle text-fg' : 'text-fg-muted hover:bg-bg-subtle hover:text-fg'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </nav>
         </div>
       )}
