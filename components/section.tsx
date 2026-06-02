@@ -14,11 +14,11 @@ export function Section({ id, eyebrow, title, description, children, className =
   return (
     <section
       id={id}
-      className={`scroll-mt-20 border-t border-border py-20 md:py-28 ${className}`}
+      className={`scroll-mt-20 border-t border-border py-14 md:py-20 ${className}`}
     >
       <div className="container">
         <Reveal>
-          <div className="mb-10 flex flex-col gap-3 md:mb-14">
+          <div className="mb-8 flex flex-col gap-3 md:mb-10">
             {eyebrow && (
               <span className="inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-accent">
                 <span aria-hidden className="h-px w-6 bg-accent/60" />

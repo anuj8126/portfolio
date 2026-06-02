@@ -54,7 +54,7 @@ export function Hero() {
         </>
       )}
 
-      <div className="container relative flex min-h-[calc(100vh-4rem)] flex-col justify-center py-20 md:py-28">
+      <div className="container relative flex min-h-[78vh] flex-col justify-center py-16 md:py-20">
         <motion.div
           {...fade(0)}
           className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-bg-subtle/80 px-3 py-1.5 text-xs text-fg-muted backdrop-blur"
@@ -113,7 +113,7 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <motion.div {...fade(0.3)} className="mt-10 flex flex-wrap items-center gap-3">
+        <motion.div {...fade(0.3)} className="mt-8 flex flex-wrap items-center gap-3">
           <Magnetic strength={0.22} radius={130}>
             <a
               href="#contact"
