@@ -5,6 +5,7 @@ import { ArrowRight, Download, Globe, MapPin, Sparkles } from 'lucide-react';
 import { profile } from '@/data/resume';
 import { MouseSpotlight } from './mouse-spotlight';
 import { RoleRotator } from './role-rotator';
+import { Magnetic } from './magnetic';
 
 const ROLES = [
   'Frontend-Heavy Full Stack Engineer',
@@ -112,18 +113,20 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <motion.div {...fade(0.3)} className="mt-10 flex flex-wrap gap-3">
-          <a
-            href="#contact"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-fg px-5 py-3 text-sm font-medium text-bg shadow-sm transition hover:bg-fg/90"
-          >
-            <span
-              aria-hidden
-              className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full"
-            />
-            Get in touch
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+        <motion.div {...fade(0.3)} className="mt-10 flex flex-wrap items-center gap-3">
+          <Magnetic strength={0.22} radius={130}>
+            <a
+              href="#contact"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-fg px-5 py-3 text-sm font-medium text-bg shadow-sm transition hover:bg-fg/90"
+            >
+              <span
+                aria-hidden
+                className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+              />
+              Get in touch
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+          </Magnetic>
           <a
             href={profile.links.resume}
             download="Anuj_Srivastav_Senior_Product_Engineer.pdf"
