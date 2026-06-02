@@ -248,6 +248,44 @@ export const highlights: Highlight[] = [
   },
 ];
 
+export type ArchitectureHighlight = {
+  icon: 'layers' | 'compass' | 'network' | 'gauge';
+  title: string;
+  description: string;
+  tags: string[];
+};
+
+export const architectureHighlights: ArchitectureHighlight[] = [
+  {
+    icon: 'layers',
+    title: 'Scalable Frontend Architecture',
+    description:
+      'Designed React + TypeScript frontends with reusable components, configuration-driven rendering, API integration patterns, and performance-focused build strategies.',
+    tags: ['React', 'TypeScript', 'Config-driven', 'Component design'],
+  },
+  {
+    icon: 'compass',
+    title: 'Engineering Standards',
+    description:
+      'Defined frontend standards for state management, component design, testing, CI validation, bundle optimization, and release reliability.',
+    tags: ['State', 'Testing', 'CI', 'Release reliability'],
+  },
+  {
+    icon: 'network',
+    title: 'Microservice-Integrated UI',
+    description:
+      'Built frontend systems integrated with microservice-based backend platforms — improving API contract reliability, error handling, and delivery consistency.',
+    tags: ['REST', 'API contracts', 'Microservices', 'Contract reliability'],
+  },
+  {
+    icon: 'gauge',
+    title: 'Performance Guardrails',
+    description:
+      'Introduced performance guardrails in CI: bundle analysis, Lighthouse thresholds, lazy loading, code splitting, and Core Web Vitals monitoring.',
+    tags: ['Bundle analysis', 'Lighthouse', 'LCP / FCP', 'Code splitting'],
+  },
+];
+
 export const philosophy = [
   'Pragmatic, performance-first frontend — every kilobyte and every millisecond gets justified.',
   'API contracts and microservice boundaries are part of the frontend job. I design for both sides.',
