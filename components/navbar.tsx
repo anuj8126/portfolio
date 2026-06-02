@@ -9,6 +9,7 @@ import { useActiveSection } from '@/lib/use-active-section';
 
 const navItems = [
   { id: 'about', label: 'About' },
+  { id: 'architecture', label: 'Architecture' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
