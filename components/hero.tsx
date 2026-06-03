@@ -129,7 +129,7 @@ export function Hero() {
           </Magnetic>
           <a
             href={profile.links.resume}
-            download="Anuj_Srivastav_Senior_Product_Engineer.pdf"
+            download="Anuj_Srivastav_Senior_Full_Stack_Engineer.pdf"
             className="inline-flex items-center gap-2 rounded-md border border-border-strong bg-bg-subtle px-5 py-3 text-sm font-medium text-fg transition hover:border-fg-subtle"
           >
             <Download className="h-4 w-4" />
